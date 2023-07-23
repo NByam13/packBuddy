@@ -10,5 +10,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PackSeeder::class);
         $this->call(TripSeeder::class);
+        $this->call(ItemSeeder::class);
     }
 }
