@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\Pack;
 use App\Models\Trip;
 use Illuminate\Http\Request;
@@ -11,11 +12,10 @@ class DashboardController extends Controller
 {
     public function index(): View
     {
-        $trips = Trip::query()->orderBy('start', 'desc')->limit(3)->get();
-
         return view('dashboard', [
             'packs' => Pack::all(),
-            'trips' =>$trips
+            'trips' => Trip::query()->orderBy('start', 'desc')->limit(3)->get(),
+            'items' => Item::query()->limit(3)->get(),
         ]);
     }
 }
