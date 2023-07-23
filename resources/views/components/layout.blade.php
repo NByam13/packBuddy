@@ -39,13 +39,13 @@
     </div>
     <nav class="w-1/4 pt-4 mx-auto">
         <div class="flex justify-between">
-            <a>Packs</a>
-            <a>Trips</a>
-            <a>Items</a>
-            <a>Friends</a>
+            <a class="text-lg" href="{{ route('packs.index', [Auth::user()]) }}">Packs</a>
+            <a class="text-lg" href="{{ route('trips.index', [Auth::user()]) }}">Trips</a>
+            <a class="text-lg" href="{{ route('items.index', [Auth::user()]) }}">Items</a>
+            <a class="text-lg">Friends</a>
         </div>
     </nav>
-    <div class="w-5/6 mx-auto mt-4 p-8 border border-gray-200">
+    <div class="w-5/6 mx-auto mt-4 p-8 border border-gray-200 rounded-2xl">
         {{ $slot }}
     </div>
 </div>
