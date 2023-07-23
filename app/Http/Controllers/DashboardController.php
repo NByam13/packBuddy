@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use App\Models\Pack;
 use App\Models\Trip;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
