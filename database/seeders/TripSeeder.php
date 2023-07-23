@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Trip;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TripSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call(PackSeeder::class);
-        $this->call(TripSeeder::class);
+        Trip::factory(10)->create();
     }
 }
