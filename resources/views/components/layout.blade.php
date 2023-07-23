@@ -45,7 +45,7 @@
             <a class="text-lg">Friends</a>
         </div>
     </nav>
-    <div class="w-5/6 mx-auto mt-4 p-8 border border-gray-200 rounded-2xl">
+    <div class="w-5/6 mx-auto mt-4 p-8 border border-gray-200 rounded-2xl bg-green-50">
         {{ $slot }}
     </div>
 </div>

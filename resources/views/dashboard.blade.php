@@ -1,6 +1,6 @@
 <x-layout>
     <div class="grid space-x-4 grid-cols-3 mx-auto">
-        <section class="row-span-3 border border-gray-200 rounded-lg py-2 px-4">
+        <section class="row-span-3 border border-gray-200 rounded-lg py-2 px-4 bg-white">
             <h2 class="text-xl border-b-2 mb-2">Your Packs</h2>
             <div class="px-8">
                 <div class="grid grid-cols-2 font-bold text-gray-500 border-b-2 py-1">
@@ -15,7 +15,7 @@
                 @endforeach
             </div>
         </section>
-        <section class="col-span-2 border border-gray-200 rounded-lg py-2 px-4 mb-4">
+        <section class="col-span-2 border border-gray-200 rounded-lg py-2 px-4 mb-4 bg-white">
             <h2 class="text-xl border-b-2 mb-2">Upcoming Trips</h2>
             <div class="px-8">
                 @foreach($trips as $trip)
@@ -36,7 +36,7 @@
                 @endforeach
             </div>
         </section>
-        <section class="col-span-2 border border-gray-200 rounded-lg py-2 px-4 mb-4">
+        <section class="col-span-2 border border-gray-200 rounded-lg py-2 px-4 mb-4 bg-white">
             <h2 class="text-xl border-b-2 mb-2">Favourite Gear</h2>
             <div class="px-8">
                 @foreach($items as $item)
@@ -53,7 +53,7 @@
                 @endforeach
             </div>
         </section>
-        <section class="col-span-2 border border-gray-200 rounded-lg py-2 px-4">
+        <section class="col-span-2 border border-gray-200 rounded-lg py-2 px-4 bg-white">
             <h2 class="text-xl border-b-2 mb-2">Favourite Friends</h2>
             <div>
                 Test
