@@ -24,10 +24,10 @@ class Pack extends Model
         return $this->belongsToMany(Trip::class);
     }
 
-//    public function items(): BelongsToMany
-//    {
-//        return $this->belongsToMany(Item::class);
-//    }
+    public function items(): BelongsToMany
+    {
+        return $this->belongsToMany(Item::class);
+    }
 
     protected function name(): Attribute
     {

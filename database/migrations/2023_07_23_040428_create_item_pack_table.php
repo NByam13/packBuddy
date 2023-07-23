@@ -8,15 +8,15 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('pack_trip', function (Blueprint $table) {
+        Schema::create('item_pack', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
             $table->foreignId('pack_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('trip_id')->constrained()->cascadeOnDelete();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('pack_trip');
+        Schema::dropIfExists('item_pack');
     }
 };

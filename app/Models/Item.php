@@ -13,10 +13,10 @@ class Item extends Model
 
     protected $guarded = [];
 
-//    public function packs(): BelongsToMany
-//    {
-//        return $this->belongsToMany(Pack::class);
-//    }
+    public function packs(): BelongsToMany
+    {
+        return $this->belongsToMany(Pack::class);
+    }
 
     protected function name(): Attribute
     {
