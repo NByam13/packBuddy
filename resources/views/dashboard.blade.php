@@ -4,10 +4,10 @@
             <h2 class="text-xl border-b-2 mb-2">Your Packs</h2>
             <div>
                 <div>
-                    {{--                @foreach($packs as $pack)--}}
-                    {{--                    <div>{{$pack->name}}</div>--}}
-                    {{--                    <div>{{$pack->items->count()}}</div>--}}
-                    {{--                @endforeach--}}
+                    @foreach($packs as $pack)
+                        <div>{{$pack->name}}</div>
+{{--                        <div>{{$pack->items->count()}}</div>--}}
+                    @endforeach
                 </div>
             </div>
         </section>
