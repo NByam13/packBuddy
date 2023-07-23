@@ -25,11 +25,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Model resources
-    Route::prefix('/{user}')->group(function () {
-        Route::resource('packs', PackController::class);
-        Route::resource('trips', TripController::class);
-        Route::resource('items', ItemController::class);
-    });
+    Route::resource('packs', PackController::class);
+    Route::resource('trips', TripController::class);
+    Route::resource('items', ItemController::class);
 });
 
 

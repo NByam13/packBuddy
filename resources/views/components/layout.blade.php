@@ -44,9 +44,9 @@
     @auth()
         <nav class="w-1/4 pt-4 mx-auto">
             <div class="flex justify-between">
-                <a class="text-lg" href="{{ route('packs.index', [Auth::user()]) }}">Packs</a>
-                <a class="text-lg" href="{{ route('trips.index', [Auth::user()]) }}">Trips</a>
-                <a class="text-lg" href="{{ route('items.index', [Auth::user()]) }}">Items</a>
+                <a class="text-lg" href="{{ route('packs.index') }}">Packs</a>
+                <a class="text-lg" href="{{ route('trips.index') }}">Trips</a>
+                <a class="text-lg" href="{{ route('items.index') }}">Items</a>
                 <a class="text-lg">Friends</a>
             </div>
         </nav>

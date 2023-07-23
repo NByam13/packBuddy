@@ -4,10 +4,7 @@
     </header>
     <nav class="flex justify-between mb-4">
         <button class="border border-gray-200 rounded-2xl px-4 py-2 bg-white hover:bg-gray-200">⬅️ Back</button>
-        <div class="flex items-center border border-gray-200 rounded-2xl px-4 py-2 bg-white hover:bg-gray-200">
-            <img class="w-8 h-8" alt="Add Icon" src="{{asset('images/icons8-add-48.png')}}"/>
-            New Pack
-        </div>
+        <livewire:pack-modal/>
     </nav>
     <main class="border border-gray-200 rounded-2xl bg-white px-8">
         <div class="grid grid-cols-5 font-bold text-gray-500 text-lg border-b-2">
