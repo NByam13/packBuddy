@@ -6,6 +6,7 @@ use Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Pack extends Model
 {
@@ -18,11 +19,11 @@ class Pack extends Model
         return $this->belongsTo(User::class);
     }
 
-//    public function trips(): BelongsToMany
-//    {
-//        return $this->belongsToMany(Trip::class);
-//    }
-//
+    public function trips(): BelongsToMany
+    {
+        return $this->belongsToMany(Trip::class);
+    }
+
 //    public function items(): BelongsToMany
 //    {
 //        return $this->belongsToMany(Item::class);
