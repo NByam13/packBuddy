@@ -12,12 +12,6 @@ class CreatePackRequest extends FormRequest
         return [
             'name'  => 'required|max:40|min:3',
             'trip'  => 'sometimes|exists:trips,id',
-            'items' => [
-                'sometimes',
-                'exists' => fn() => $this->collect('items')->every(
-                    fn($item) => Item::query()->where('id', $item)->exists()
-                ),
-            ]
         ];
     }
 }

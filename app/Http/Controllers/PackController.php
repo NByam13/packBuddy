@@ -19,6 +19,13 @@ class PackController extends Controller
 
     public function create(CreatePackRequest $request)
     {
+        Pack::create([
+            ...$request->validated(),
+            'user_id' => $request->user()->id
+        ]);
 
+        return view('packs.index', [
+            'packs' => PackResource::collection(Pack::where('user_id', $request->user()->id)->get())
+        ]);
     }
 }
