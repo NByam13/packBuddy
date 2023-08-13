@@ -8,7 +8,7 @@
             <h2 class="text-2xl mx-auto pb-4">Create a New Pack</h2>
             <form class="flex flex-col space-y-2 items-center" method="GET" action="{{route('packs.create')}}">
                 @csrf
-                <input class="rounded-xl" name="name" placeholder="Pack name" type="text">
+                <input class="rounded-xl w-full" name="name" placeholder="Pack name" type="text">
                 @error('name')
                 @enderror
 
@@ -19,7 +19,7 @@
                             <option value="{{$trip->id}}">{{$trip->name}}</option>
                         @endforeach
                     @else
-                        <option disabled value="-1">No Trips Found!</option>
+                        <option disabled value="-1" @selected(-1)>No Trips Found!</option>
                     @endif
                 </select>
                 <div class="flex space-x-4">
