@@ -2,9 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Item;
 use App\Models\Trip;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Livewire\Component;
