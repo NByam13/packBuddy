@@ -28,7 +28,7 @@
 
                 <div class="flex space-x-4">
                     <div
-                        wire:click="close"
+                        wire:click.stop="close"
                         class="flex w-5/6 py-2 px-4 border border-gray-200 rounded-xl hover:bg-gray-200">
                         <img class="w-8 h-8 mr-2" alt="Close Icon" src="{{asset('images/icons8-cancel-48.png')}}">
                         <button type="button">
