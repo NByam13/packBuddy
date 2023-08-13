@@ -21,7 +21,16 @@
                     <div>{{$pack->trips->count()}}</div>
                     <div>{{$pack->items->count()}}</div>
                     <div>{{$pack->created_at}}</div>
-                    <div>{{$pack->updated_at}}</div>
+                    <div class="flex justify-between">
+                        {{$pack->updated_at}}
+                        <form class="flex justify-around pr-4">
+                            @csrf
+                            <button type="submit" formaction="{{route('packs.destroy', $pack)}}" formmethod="POST">
+                                @method('DELETE')
+                                <img alt="delete" src="{{asset('images/icons8-trash-can-24.png')}}">
+                            </button>
+                        </form>
+                    </div>
                 </div>
             @endforeach
         @else

@@ -35,6 +35,6 @@ class TripController extends Controller
 
         return view('trips.index', [
             'trips' => TripResource::collection(Trip::where('user_id', $request->user()->id)->get())
-        ]);
+        ])->with('success', "$trip->name trip successfully deleted");
     }
 }

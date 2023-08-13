@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePackRequest;
+use App\Http\Requests\DeletePackRequest;
 use App\Http\Resources\PackResource;
 use App\Models\Pack;
 use Illuminate\Http\Request;
@@ -27,5 +28,14 @@ class PackController extends Controller
         return view('packs.index', [
             'packs' => PackResource::collection(Pack::where('user_id', $request->user()->id)->get())
         ]);
+    }
+
+    public function destroy(DeletePackRequest $request, Pack $pack)
+    {
+        $pack->delete();
+
+        return view('packs.index', [
+            'packs' => PackResource::collection(Pack::where('user_id', $request->user()->id)->get())
+        ])->with('success', "$pack->name pack successfully deleted");
     }
 }
