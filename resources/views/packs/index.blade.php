@@ -3,7 +3,7 @@
         <h2 class="border w-1/5 mx-auto rounded-2xl bg-white">All Packs</h2>
     </header>
     <nav class="flex justify-between mb-4">
-        <button class="border border-gray-200 rounded-2xl px-4 py-2 bg-white hover:bg-gray-200">⬅️ Back</button>
+        <livewire:back-button/>
         <livewire:pack-modal/>
     </nav>
     <main class="border border-gray-200 rounded-2xl bg-white px-8">
@@ -14,14 +14,23 @@
             <div>Created</div>
             <div>Last Updated</div>
         </div>
-        @foreach($packs as $pack)
-            <div class="grid grid-cols-5 py-2 {{ !$loop->last ? "border-b-2" : ""}}">
-                <div>{{$pack->name}}</div>
-                <div>{{$pack->trips->count()}}</div>
-                <div>{{$pack->items->count()}}</div>
-                <div>{{$pack->created_at}}</div>
-                <div>{{$pack->updated_at}}</div>
+        @if(count($packs))
+            @foreach($packs as $pack)
+                <div class="grid grid-cols-5 py-2 {{ !$loop->last ? "border-b-2" : ""}}">
+                    <div>{{$pack->name}}</div>
+                    <div>{{$pack->trips->count()}}</div>
+                    <div>{{$pack->items->count()}}</div>
+                    <div>{{$pack->created_at}}</div>
+                    <div>{{$pack->updated_at}}</div>
+                </div>
+            @endforeach
+        @else
+            <div class=" w-1/4 flex flex-col items-center mx-auto text-lg py-4 space-y-2">
+                <div>No Packs found! Add a new one!</div>
+                <div class="w-40">
+                    <livewire:pack-modal/>
+                </div>
             </div>
-        @endforeach
+        @endif
     </main>
 </x-layout>

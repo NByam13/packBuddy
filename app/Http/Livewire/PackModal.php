@@ -11,13 +11,23 @@ use Livewire\Component;
 
 class PackModal extends Component
 {
-    public $show = false;
+    public $show;
     public $trips = [];
+
+    public function mount()
+    {
+        $this->show = false;
+    }
 
     public function show(): void
     {
         $this->trips();
         $this->show = true;
+    }
+
+    public function close(): void
+    {
+        $this->show = false;
     }
 
     public function trips(): void
