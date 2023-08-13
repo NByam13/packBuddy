@@ -21,7 +21,16 @@
                     <div>{{$trip->location}}</div>
                     <div>{{$trip->start->toFormattedDateString()}}</div>
                     <div>{{$trip->end->toFormattedDateString()}}</div>
-                    <div>{{$trip->packs->count()}}</div>
+                    <div class="flex justify-between">
+                        {{$trip->packs->count()}}
+                        <form class="flex justify-around pr-4">
+                            @csrf
+                            <button type="submit" formaction="{{route('trips.destroy', $trip)}}" formmethod="POST">
+                                @method('DELETE')
+                                <img alt="delete" src="{{asset('images/icons8-trash-can-24.png')}}">
+                            </button>
+                        </form>
+                    </div>
                 </div>
             @endforeach
         @else
